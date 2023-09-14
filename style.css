@@ -1,0 +1,263 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0; 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+/* make images easier to work with */
+img,
+picutre {
+    max-width: 100%;
+    display: block;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+#wrapper{
+    width:100vw;
+    height: 100vh;
+    overflow:hidden;
+    font-family: 'Titillium Web', sans-serif;
+    background-color: rgb(226, 218, 218);
+}
+
+.container{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    margin:auto;
+}
+
+.container>h1{
+    margin:1rem auto;
+    padding:0 1rem
+}
+
+.resultDisplay{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background-color: black;
+    border-bottom: 0.3rem solid coral;
+    border-radius:10px;
+    color:gold
+}
+[passwordDisplay]{
+    color:gold;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+[passwordDisplay]::placeholder{
+    color:gold;
+    opacity: 0.7;
+}
+
+[passwordDisplay]{
+    border:none;
+    width:70%;
+    padding:0.5rem;
+    background:none;
+}
+
+[copyButton]{
+    border:none;
+    background:none
+}
+
+.pLength{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    
+}
+
+.inputContainer{
+    background-color: black;
+    box-shadow: 0 0 10px 5px coral;
+    color:white;
+    margin-top:1rem;
+    padding:1rem;
+    display:flex;
+    flex-direction: column;
+    gap:1rem ;
+    border-radius:10px
+}
+
+
+[strength]{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2rem;
+}
+[strengthColor]{
+    height:1.2rem;
+    width:1.2rem;
+    border-radius: 50%;
+    background-color: gray;
+    box-shadow: 0 0 10px white;
+}
+
+#upperCase{
+    border-style: none;
+}
+
+
+.check{
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
+    font-weight:bolder
+}
+
+.check> input{
+    appearance: none;
+    width:1.2rem;
+    height:1.2rem;
+    outline: 1px solid aqua;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    border-radius: 5px;
+}
+
+.check>input:checked{
+    background-color: aqua;
+}
+
+.check>input:checked::before{
+    content:"✓";
+    position: absolute;
+    left:0.2rem;
+    font-weight: bold;
+}
+
+.check>i{
+    position: absolute;
+    left:1.4rem;
+    opacity: 0;
+}
+
+
+.slider{
+    appearance: none;
+    cursor: pointer;
+    /* position: absolute; */
+    background-color: rgb(68, 255, 0);
+    background-size: 10%;
+    border-radius: 15px;
+    height: 0.75rem;
+    border: none;
+    outline: none;
+}
+
+.slider::-webkit-slider-thumb{
+    appearance: none;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 100%;
+    background-color: yellow;
+    transition: all 100ms ease-in-out;
+    position: relative;
+}
+
+.slider::-webkit-slider-thumb:hover{
+    background-color: black;
+    outline: 3px solid yellow;
+}
+
+.slider:focus{
+    outline:3px solid yellow
+}
+
+
+.generate{
+    height:fit-content;
+    width:90%;
+    margin:auto;
+    background-color: gold;
+    border-bottom: 5px solid coral;
+    padding:1rem;
+    color:black;    
+    text-align: center;
+    border-radius: 30px;
+    font-weight: bold;
+    word-spacing:0.4rem ;
+    font-size: large;
+    cursor:pointer;
+}
+
+.generate:hover{
+    background-color: white;
+}
+
+
+
+
+[copyMsg]{
+    position: absolute;
+    color:black;
+    top:3.5rem;
+    right:0.5rem;
+    padding:0.5rem;
+    border-radius: 5px;
+
+}
+
+@media screen and (max-width:1000px) {
+    .container{
+        text-align: center;
+        width: 85%;
+    }
+    .check{
+        font-weight: normal;
+    }
+    [copyMsg]{
+        top:5.5rem;
+        right:-1rem
+    }
+}
